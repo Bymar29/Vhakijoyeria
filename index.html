@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vhaki Store — Joyas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --muted:#f5f5f5;
+      --text:#111214;
+      --accent:#b89b6b; /* dorado suave */
+      --accent-2:#e6d9c6;
+      --card-shadow: 0 6px 18px rgba(17,18,20,0.06);
+      --radius:14px;
+      --maxw:1100px;
+      --gap:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Layout */
+    .wrap{max-width:var(--maxw);margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),#fff);display:grid;place-items:center;font-family:Playfair Display,serif;font-weight:600;color:var(--text);box-shadow:var(--card-shadow)}
+    .brand h1{font-family:Playfair Display,serif;margin:0;font-size:20px}
+    .brand p{margin:0;font-size:13px;color:#6b6b6b}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{font-size:14px;color:#444;text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;margin-top:34px;align-items:center}
+    .hero .intro h2{font-family:Playfair Display,serif;margin:0;font-size:36px}
+    .hero .intro p{color:#555;margin-top:12px}
+    .hero .cta{margin-top:22px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--text);color:#fff}
+    .btn-outline{border:1px solid #e6e6e6;color:var(--text);background:transparent}
+
+    .hero .preview{background:var(--muted);border-radius:18px;padding:20px;box-shadow:var(--card-shadow)}
+    .preview .img{width:100%;height:320px;background:#ddd;border-radius:12px;display:block;object-fit:cover}
+
+    /* Products grid */
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:36px}
+    .card{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:12px}
+    .card img{width:100%;height:260px;border-radius:10px;object-fit:cover}
+    .card h3{margin:0;font-size:16px}
+    .price{font-weight:600;color:var(--text)}
+    .desc{font-size:13px;color:#666;margin-top:6px}
+    .actions{margin-top:auto;display:flex;gap:10px}
+    .wa{flex:1;padding:10px;border-radius:10px;text-align:center;text-decoration:none;font-weight:600;background:linear-gradient(90deg,var(--accent),#a98a5f);color:#fff}
+    .more{padding:10px;border-radius:10px;border:1px solid #eee;text-align:center;text-decoration:none;color:#444}
+
+    /* Footer */
+    footer{margin-top:48px;border-top:1px solid #f1f1f1;padding-top:20px;color:#7a7a7a;font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .products{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .wrap{padding:18px;margin:18px auto}
+      .products{grid-template-columns:1fr}
+      .logo{width:46px;height:46px}
+      .hero .preview .img{height:220px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">V</div>
+        <div>
+          <h1>Vhaki Store</h1>
+          <p>Joyas minimalistas · Elegancia diaria</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#coleccion">Colección</a>
+        <a href="#sobre-nosotros">Sobre</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="hero">
+      <div class="intro">
+        <h2>Joyas que cuentan tu historia</h2>
+        <p>Diseños delicados, materiales de calidad y acabados con detalle. Encuentra piezas atemporales para usar todos los días.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#coleccion">Ver colección</a>
+          <a class="btn btn-outline" href="#contacto" style="margin-left:10px">Contáctanos</a>
+        </div>
+      </div>
+
+      <div class="preview">
+        <img class="img" src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="joyería elegante"/>
+      </div>
+    </section>
+
+    <main>
+      <h2 id="coleccion" style="margin-top:40px;font-size:22px;font-family:Playfair Display,serif">Colección destacada</h2>
+      <div class="products">
+
+        <!-- Producto 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1520975913111-1a2e5f7e0f6e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Anillo Sol y Luna"/>
+          <h3>Anillo Sol & Luna</h3>
+          <div class="desc">Acero inoxidable con baño dorado. Talla ajustable.</div>
+          <div class="price">S/ 45</div>
+          <div class="actions">
+            <!-- reemplaza PHONE_NUMBER por tu número sin + ni espacios (ej: 51987654321) -->
+            <a class="wa" href="https://wa.me/PHONE_NUMBER?text=Hola%20Vhaki%20Store%20✨%20Quiero%20comprar%20el%20Anillo%20Sol%20%26%20Luna%20-%20S/45%20(Indica%20talla%20si%20es%20necesario)" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+            <a class="more" href="#">Ver</a>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Collar Tulipán"/>
+          <h3>Collar Tulipán</h3>
+          <div class="desc">Cadena fina en acero, colgante tulipán con baño dorado.</div>
+          <div class="price">S/ 50</div>
+          <div class="actions">
+            <a class="wa" href="https://wa.me/PHONE_NUMBER?text=Hola%20Vhaki%20Store%20✨%20Quiero%20el%20Collar%20Tulip%C3%A1n%20-%20S/50" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+            <a class="more" href="#">Ver</a>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1523381211031-59a8d4d8b6c8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pendientes Mariposa"/>
+          <h3>Pendientes Mariposa</h3>
+          <div class="desc">Pendientes ligeros, diseño mariposa, perfectos para diario.</div>
+          <div class="price">S/ 35</div>
+          <div class="actions">
+            <a class="wa" href="https://wa.me/PHONE_NUMBER?text=Hola%20Vhaki%20Store%20✨%20Quiero%20los%20Pendientes%20Mariposa%20-%20S/35" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+            <a class="more" href="#">Ver</a>
+          </div>
+        </article>
+
+      </div>
+
+      <section id="sobre-nosotros" style="margin-top:40px">
+        <h3 style="font-family:Playfair Display,serif">Sobre Vhaki Store</h3>
+        <p style="max-width:720px;color:#555">Vhaki Store ofrece joyas pensadas para acompañarte todos los días: piezas minimalistas, con acabados elegantes y a precios accesibles. Envíos a todo el Perú.</p>
+      </section>
+
+      <section id="contacto" style="margin-top:26px">
+        <h3 style="font-family:Playfair Display,serif">Contacto</h3>
+        <p style="color:#555">¿Tienes dudas o quieres personalizar un pedido? Envíanos un mensaje por WhatsApp.</p>
+        <p><a class="wa" href="https://wa.me/PHONE_NUMBER?text=Hola%20Vhaki%20Store%20✨%20Tengo%20una%20consulta" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>© <strong>Vhaki Store</strong> — Joyas · Lima</div>
+        <div style="color:#999">Envíos a provincias · Pago por Yape / Plin / Depósito</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Pequeña mejora: abrir links "ver" en modal simple (sin librerías)
+    document.querySelectorAll('.more').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        e.preventDefault();
+        const card = btn.closest('.card');
+        const title = card.querySelector('h3').innerText;
+        const desc = card.querySelector('.desc').innerText;
+        const price = card.querySelector('.price').innerText;
+        alert(title + '\n\n' + desc + '\n\nPrecio: ' + price + '\n\nPara comprar, usa el botón "Comprar por WhatsApp"');
+      })
+    })
+  </script>
+</body>
+</html>
